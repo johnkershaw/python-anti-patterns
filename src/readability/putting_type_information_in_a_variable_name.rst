@@ -19,16 +19,16 @@ The code below demonstrates the dangers of variables whose names include type no
 Best practice
 -------------
 
-Remove type notation
+Add type hint
 ....................
 
 Although the modifed code below does not fix the underlying problem of attempting to divide a number by a string, the code is generally less misleading, because there is no misleading description in the variable name ``n`` that ``n`` is a number.
 
 .. code:: python
 
-    n = "Hello, World!"
+    n: str = "Hello, World!"
 
-    # still a problem, but less misleading now
+    # still a problem, but less misleading now - and linter can flag the mismatch
     4 / n
 
 References
